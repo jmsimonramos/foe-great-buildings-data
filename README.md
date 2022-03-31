@@ -1,10 +1,24 @@
-# Introduction
+## Table of Contents
+
+1. [Introduction](#Introduction)
+2. [Data Acquisition](#Data_Acquisition)
+3. [Collection Of The Data Related To The Buildings](#Collection_Of_The_Data_Related_To_The_Buildings)
+4. [Obtaining The Data Related To The Levels Of Each Of The Buildings](#Obtaining_The_Data_Related_To_The_Levels_Of_Each_Of_The_Buildings)
+5. [Additional Data Included](#Additional_Data_Included)
+6. [Datasets](#Datasets)
+7. [Structure Of Csv Files](#Structure_Of_Csv_Files)
+8. [Allbuildinglevels Csv](#Allbuildinglevels_Csv)
+9. [Buildingsinfo Csv](#Buildingsinfo_Csv)
+10. [Buildingname Csv](#Buildingname_Csv)
+
+
+# Introduction <a name="Introduction"></a>
 
 The main objective of this repository is to provide the data related to the existing large buildings in the game [Forge Of Empires](https://es0.forgeofempires.com/page/), in addition to the specific data of forge points for each of the levels of these buildings.
 
-The acquisition of this data has been carried out by performing web scrapping on the fps calculation tool "[FOE Tools](https://foe.tools/es)" (to obtain the specific information of the levels of each great building), and from the "[Forge Of Empires Wiki](https://es.wiki.forgeofempires.com/index.php?title=Grandes_Edificios)" (to obtain the data of each great building). 
-# Data Acquisition
-## Collection of the data related to the buildings
+The acquisition of this data has been carried out by performing web scrapping on the fps calculation tool "[FOE Tools](https://foe.tools/es)" (to obtain the specific information of the levels of each great building), and from the "[Forge Of Empires Wiki](https://es.wiki.forgeofempires.com/index.php?title=Grandes_Edificios)" (to obtain the data of each great building).
+# Data Acquisition <a name="Data_Acquisition"></a>
+## Collection of the data related to the buildings <a name="Collection_Of_The_Data_Related_To_The_Buildings"></a>
 
 [The Forge of Empires wiki website](https://es.wiki.forgeofempires.com/index.php?title=Grandes_Edificios) has been used to obtain the data of the buildings. The process has been carried out by taking the source code of the web and using the Pandas library to transform the web table where the data were found (See Figure 1), to a DataFrame object on which to preprocess the data and save them in a .csv file.
 
@@ -14,9 +28,9 @@ The acquisition of this data has been carried out by performing web scrapping on
 
 The source code for this step can be found in the notebook **code/getBuildingData.ipynb**.
 
-## Obtaining the data related to the levels of each of the buildings
+## Obtaining the data related to the levels of each of the buildings <a name="Obtaining_The_Data_Related_To_The_Levels_Of_Each_Of_The_Buildings"></a>
 
-In the case of building level data, the [FOE Tools](https://foe.tools/es) was used. 
+In the case of building level data, the [FOE Tools](https://foe.tools/es) was used.
 
 The first step has been to obtain the url for each of the great buildings, in order to obtain the data related to all their levels. For this purpose, an existing *dropdown* element has been used in the page in which the name of each building appears, as well as the value used by the page to generate the url to the corresponding data (See Figure 2). This allows us to obtain both the name of the building and the reference needed to generate the url and access its data.
 
@@ -31,7 +45,7 @@ To obtain the data for each level, the first step is to access the url of each b
 ![FOEToolMinMax](/assets/foeToolsMinMaxValue.png)
 **Figure 3: Obtained min level and max level of building.**
 
-Since the table always has the same format (See Figure 4), it is simple to determine in which cells the values we are interested in are located in order to keep them. 
+Since the table always has the same format (See Figure 4), it is simple to determine in which cells the values we are interested in are located in order to keep them.
 
 ![FOEToolMinMax](/assets/foeToolsTable.png)
 **Figure 4: Table with level data.**
@@ -42,9 +56,9 @@ Finally, this step is repeated for each of the great buildings obtained in the f
 
 The source code for this step can be found in the notebook **code/getBuildingLevels.ipynb**
 
-## Additional data included
+## Additional data included <a name="Additional_Data_Included"></a>
 
-In order to improve the data obtained, some additional fields have been added to the data obtained from the different sources mentioned above: 
+In order to improve the data obtained, some additional fields have been added to the data obtained from the different sources mentioned above:
 
 * In the case of the buildings the name of the building has been added in Spanish and English.
 * In the case of the levels we have added the reward in forge points assuming the bonus of 1.9 (Ark Level 80), a value commonly used in the game.
@@ -57,7 +71,7 @@ To calculate the reward for a different ark level, just take the value of the PX
 
 **Reward with bonus = ceil(200 * 1.3) = 260**
 
-# Datasets
+# Datasets <a name="Datasets"></a>
 
 The datasets generated in the repository are structured as follows:
 
@@ -75,8 +89,8 @@ The datasets generated in the repository are structured as follows:
 └── README.md
 ```
 
-## Structure of .csv files
-### ALLBuildingLevels.csv
+## Structure of .csv files <a name="Structure_Of_Csv_Files"></a>
+### ALLBuildingLevels.csv <a name="Allbuildinglevels_Csv"></a>
 
 The file *ALLBuildingLevels.csv* has 6.452 records with 16 attributes. These attributes are the following:
 
@@ -99,7 +113,7 @@ The file *ALLBuildingLevels.csv* has 6.452 records with 16 attributes. These att
 | P4 Reward (Arc Level 80)      | Base reward for P4 with 1.9 bonus                 |  Int    |
 | P5 Reward (Arc Level 80)      | Base reward for P5 with 1.9 bonus                 |  Int    |
 
-### buildingsInfo.csv
+### buildingsInfo.csv <a name="Buildingsinfo_Csv"></a>
 
 The file *buildingsInfo.csv* has 42 records with 5 attributes. These attributes are the following:
 
@@ -111,7 +125,7 @@ The file *buildingsInfo.csv* has 42 records with 5 attributes. These attributes 
 | Size              | Building size                             | Str  |
 | Features          | Bonus provided by the building. Format **bonus1: bonus2:...** | Str  |
 
-### {buildingName}.csv
+### {buildingName}.csv <a name="Buildingname_Csv"></a>
 
 The individual files for each of the buildings have 14 attributes. These attributes are the following:
 
