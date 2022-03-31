@@ -2,14 +2,14 @@
 
 1. [Introduction](#Introduction)
 2. [Data Acquisition](#Data_Acquisition)
-3. [Collection Of The Data Related To The Buildings](#Collection_Of_The_Data_Related_To_The_Buildings)
-4. [Obtaining The Data Related To The Levels Of Each Of The Buildings](#Obtaining_The_Data_Related_To_The_Levels_Of_Each_Of_The_Buildings)
-5. [Additional Data Included](#Additional_Data_Included)
+3. [Collection of the data related to the Buildings](#Collection_Of_The_Data_Related_To_The_Buildings)
+4. [Obtaining the data related to the levels of each of the Buildings](#Obtaining_The_Data_Related_To_The_Levels_Of_Each_Of_The_Buildings)
+5. [Additional data included](#Additional_Data_Included)
 6. [Datasets](#Datasets)
-7. [Structure Of Csv Files](#Structure_Of_Csv_Files)
-8. [Allbuildinglevels Csv](#Allbuildinglevels_Csv)
-9. [Buildingsinfo Csv](#Buildingsinfo_Csv)
-10. [Buildingname Csv](#Buildingname_Csv)
+7. [Structure of csv files](#Structure_Of_Csv_Files)
+8. [AllBuildingLevels.csv](#Allbuildinglevels_Csv)
+9. [BuildingsInfo.csv](#Buildingsinfo_Csv)
+10. [BuildingName.csv](#Buildingname_Csv)
 
 
 # Introduction <a name="Introduction"></a>
